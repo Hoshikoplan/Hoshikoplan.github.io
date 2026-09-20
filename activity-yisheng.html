@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>義盛國小天文與自然科學營 | 星野的孩子</title>
+    <title>義盛國小天文與自然科學營｜星野的孩子 Hoshiko</title>
+    <meta name="description" content="星野的孩子於桃園市復興區義盛國小舉辦天文與自然科學營，與孩子一起學習並在天候轉晴後觀星。">
     <link rel="icon" href="images/hoshiko.ico">
     <style>
         /* 基本樣式設置 */
@@ -50,6 +51,8 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
+        .logo a { color: white; }
 
         .logo {
             font-size: 1.5rem;
@@ -287,6 +290,9 @@
             width: 30px;
             height: 20px;
             cursor: pointer;
+            background: transparent;
+            border: 0;
+            padding: 0;
         }
 
         .menu-toggle span {
@@ -317,7 +323,9 @@
             }
 
             .nav-links.active {
-                height: 300px;
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
                 padding: 1rem 0;
             }
 
@@ -342,31 +350,27 @@
             }
         }
     </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260920-4">
 </head>
 
 <body>
     <!-- 頁首區域 -->
     <header>
         <nav>
-            <div class="logo"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html#"><span class="lang-zh">首頁</span><span class="lang-en">Home</span></a></li>
-                <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
-                            Us</span></a></li>
-                <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
-                            class="lang-en">Projects</span></a></li>
-                <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
-                            class="lang-en">Events</span></a></li>
-                <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a>
-                </li>
-                <li><a href="index.html#contact"><span class="lang-zh">聯絡我們</span><span
-                            class="lang-en">Contact</span></a></li>
-                <li><button class="lang-toggle" id="langToggle">EN / 中</button></li>
+            <div class="logo"><a href="index.html#"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></a></div>
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="site-menu">
+                <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About</span></a></li>
+                <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Our Journey</span></a></li>
+
+                <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a></li>
+                <li><a href="index.html#contact"><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact</span></a></li>
+                <li><button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN / 中</button></li>
             </ul>
         </nav>
     </header>
@@ -398,7 +402,7 @@
             </div>
         </div>
 
-        <img src="images/IMG_6805.JPG" alt="Yisheng Elementary School Camp" class="main-image">
+        <img src="images/IMG_6805.JPG" alt="Photos from the Yisheng Elementary School astronomy camp" class="main-image">
 
         <div class="activity-content">
             <p>
@@ -421,10 +425,8 @@
                     environment.</span>
             </p>
             <p>
-                <span class="lang-zh">晚上的觀星活動，遠離城市光害的山區提供了絕佳的觀星條件。孩子們第一次透過專業天文望遠鏡看到深空天體與行星，一起認識星座，驚嘆連連。</span>
-                <span class="lang-en">The evening stargazing activity was held in the mountains, away from city light
-                    pollution, providing excellent conditions. Children saw deep-sky objects and planets through
-                    professional telescopes for the first time, learning about constellations with amazement.</span>
+                <span class="lang-zh">觀測當晚一開始烏雲密布，還有雷雨，我們便先把課程移到室內。約晚上 11 點雲層散去，團隊立刻將器材搬到戶外，和孩子們一起觀星。</span>
+                <span class="lang-en">Clouds and thunderstorms greeted us at the start of the observing night, so we moved the lesson indoors. Around 11 p.m., the clouds cleared. We carried the equipment outside and observed the night sky with the children.</span>
             </p>
             <p>
                 <span class="lang-zh">這次活動不僅讓孩子們學習到了天文知識，更重要的是激發了他們對自然科學的熱情與好奇心。我們也從這次經驗中學習，為未來的活動做更好的準備。</span>
@@ -441,17 +443,80 @@
 
         <h3><span class="lang-zh">活動花絮</span><span class="lang-en">Gallery</span></h3>
         <div class="gallery">
-            <img src="images/IMG_6805.JPG" alt="Group Photo" loading="lazy">
-            <img src="images/laser.jpg" alt="Laser" loading="lazy">
+            <img src="images/IMG_6805.JPG" alt="Photos from the Yisheng Elementary School astronomy camp" loading="lazy">
+            <img src="images/laser-web.jpg" alt="Photos from the Yisheng Elementary School astronomy camp" loading="lazy">
         </div>
 
         <a href="index.html#projects" class="back-btn">
-            <span class="lang-zh">← 返回活動列表</span>
-            <span class="lang-en">← Back to Events</span>
+            <span class="lang-zh">← 返回活動紀錄</span>
+            <span class="lang-en">← Back to Our Journey</span>
         </a>
     </div>
 
     <!-- 頁尾區域 -->
+<section class="team" id="team">
+<div class="container">
+<div class="section-heading"><h2><span class="lang-zh">義盛營隊成員</span><span class="lang-en">Yisheng camp team</span></h2></div>
+<div class="team-grid">
+<article class="team-member">
+<h3>謝承安</h3>
+<p class="team-role"><span class="lang-zh">星野發起人、義盛營隊總召</span><span class="lang-en">Hoshiko founder · Yisheng camp lead</span></p>
+<p><span class="lang-zh">臺大物理系一年級</span><span class="lang-en">NTU Physics · Year 1</span><br><span class="lang-zh">臺大天文社社長</span><span class="lang-en">NTU Astronomy Club president</span></p>
+</article>
+<article class="team-member">
+<h3>許翌倫</h3>
+<p class="team-role"><span class="lang-zh">天文教案負責人</span><span class="lang-en">Astronomy curriculum lead</span></p>
+<p><span class="lang-zh">清大物理系一年級</span><span class="lang-en">NTHU Physics · Year 1</span><br><span class="lang-zh">清大天文社幹部</span><span class="lang-en">NTHU Astronomy Club officer</span></p>
+</article>
+<article class="team-member">
+<h3>陳柏翰</h3>
+<p class="team-role"><span class="lang-zh">生態教案負責人</span><span class="lang-en">Ecology curriculum lead</span></p>
+<p><span class="lang-zh">臺大物理系一年級</span><span class="lang-en">NTU Physics · Year 1</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club officer</span></p>
+</article>
+<article class="team-member">
+<h3>陳欣鈺</h3>
+<p class="team-role"><span class="lang-zh">地質教案負責人</span><span class="lang-en">Geology curriculum lead</span></p>
+<p><span class="lang-zh">臺大大氣系一年級</span><span class="lang-en">NTU Atmospheric Sciences · Year 1</span><br><span class="lang-zh">臺大天文社副社長</span><span class="lang-en">NTU Astronomy Club vice president</span></p>
+</article>
+<article class="team-member">
+<h3>許孟凱</h3>
+<p class="team-role"><span class="lang-zh">隊輔組、生態教案負責人</span><span class="lang-en">Camp counselor · Ecology curriculum lead</span></p>
+<p><span class="lang-zh">臺大生科系一年級</span><span class="lang-en">NTU Life Science · Year 1</span><br><span class="lang-zh">曾參與野一片夢之海（NGO）</span><span class="lang-en">Previously participated in 野一片夢之海 (NGO)</span></p>
+</article>
+<article class="team-member">
+<h3>蔡沂恩</h3>
+<p class="team-role"><span class="lang-zh">隊輔</span><span class="lang-en">Camp counselor</span></p>
+<p><span class="lang-zh">清大工科系一年級</span><span class="lang-en">NTHU Engineering and System Science · Year 1</span><br><span class="lang-zh">清大天文社幹部</span><span class="lang-en">NTHU Astronomy Club officer</span></p>
+</article>
+<article class="team-member">
+<h3>陳子彬</h3>
+<p class="team-role"><span class="lang-zh">隊輔</span><span class="lang-en">Camp counselor</span></p>
+<p><span class="lang-zh">臺大物理系一年級</span><span class="lang-en">NTU Physics · Year 1</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club officer</span></p>
+</article>
+<article class="team-member">
+<h3>涂宇軒</h3>
+<p class="team-role"><span class="lang-zh">隊輔</span><span class="lang-en">Camp counselor</span></p>
+<p><span class="lang-zh">臺大物理系一年級</span><span class="lang-en">NTU Physics · Year 1</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club officer</span></p>
+</article>
+<article class="team-member">
+<h3>葉展境</h3>
+<p class="team-role"><span class="lang-zh">隊輔</span><span class="lang-en">Camp counselor</span></p>
+<p><span class="lang-zh">逢甲材料系一年級</span><span class="lang-en">Feng Chia University, Materials Science and Engineering · Year 1</span></p>
+</article>
+<article class="team-member">
+<h3>曾譁芷</h3>
+<p class="team-role"><span class="lang-zh">隊輔</span><span class="lang-en">Camp counselor</span></p>
+<p><span class="lang-zh">新加坡大學楊秀桃學院一年級</span><span class="lang-en">Yong Siew Toh Conservatory of Music, National University of Singapore · Year 1</span></p>
+</article>
+<article class="team-member">
+<h3>王子齊</h3>
+<p class="team-role"><span class="lang-zh">隊輔</span><span class="lang-en">Camp counselor</span></p>
+<p><span class="lang-zh">臺大物理系一年級</span><span class="lang-en">NTU Physics · Year 1</span></p>
+</article>
+</div>
+</div>
+</section>
+
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-column">
@@ -473,19 +538,14 @@
             <div class="footer-column">
                 <h3><span class="lang-zh">快速連結</span><span class="lang-en">Quick Links</span></h3>
                 <ul>
-                    <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
-                                Us</span></a></li>
-                    <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
-                                class="lang-en">Projects</span></a></li>
-                    <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
-                                class="lang-en">Events</span></a></li>
-                    <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span
-                                class="lang-en">Impact</span></a></li>
+                    <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About</span></a></li>
+                    <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Our Journey</span></a></li>
+
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 <span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span> <span
+            <p>&copy; 2026 <span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span> <span
                     class="lang-zh">版權所有</span><span class="lang-en">All Rights Reserved</span></p>
         </div>
     </footer>
@@ -516,9 +576,11 @@
         const body = document.body;
 
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.classList.toggle('active', !expanded);
+            navLinks.classList.toggle('active', !expanded);
+            menuToggle.setAttribute('aria-expanded', String(!expanded));
+            document.body.classList.toggle('menu-open', !expanded);
         });
 
         // 確保點擊導航鏈接後關閉菜單
@@ -527,6 +589,7 @@
                 if (window.innerWidth <= 768) {
                     menuToggle.classList.remove('active');
                     navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
                     document.body.classList.remove('menu-open');
                 }
             });

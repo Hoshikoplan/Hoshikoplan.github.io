@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金門天文交流計劃 | 星野的孩子</title>
+    <title>金門天文交流計劃｜星野的孩子 Hoshiko</title>
+    <meta name="description"
+        content="回顧星野的孩子 2025 年金門天文交流計畫：結合天文、科技與生態，並在前往帛琉前透過田野實作，持續調整貼近在地需求的科學推廣。">
     <link rel="icon" href="images/hoshiko.ico">
     <style>
         /* 基本樣式設置 */
@@ -50,6 +52,8 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
+        .logo a { color: white; }
 
         .logo {
             font-size: 1.5rem;
@@ -298,6 +302,9 @@
             width: 30px;
             height: 20px;
             cursor: pointer;
+            background: transparent;
+            border: 0;
+            padding: 0;
         }
 
         .menu-toggle span {
@@ -328,7 +335,9 @@
             }
 
             .nav-links.active {
-                height: 300px;
+                height: auto;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
                 padding: 1rem 0;
             }
 
@@ -353,31 +362,27 @@
             }
         }
     </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260920-4">
 </head>
 
 <body>
     <!-- 頁首區域 -->
     <header>
         <nav>
-            <div class="logo"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html#"><span class="lang-zh">首頁</span><span class="lang-en">Home</span></a></li>
-                <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
-                            Us</span></a></li>
-                <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
-                            class="lang-en">Projects</span></a></li>
-                <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
-                            class="lang-en">Events</span></a></li>
-                <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a>
-                </li>
-                <li><a href="index.html#contact"><span class="lang-zh">聯絡我們</span><span
-                            class="lang-en">Contact</span></a></li>
-                <li><button class="lang-toggle" id="langToggle">EN / 中</button></li>
+            <div class="logo"><a href="index.html#"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></a></div>
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="site-menu">
+                <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About</span></a></li>
+                <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Our Journey</span></a></li>
+
+                <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a></li>
+                <li><a href="index.html#contact"><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact</span></a></li>
+                <li><button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN / 中</button></li>
             </ul>
         </nav>
     </header>
@@ -409,7 +414,7 @@
             </div>
         </div>
 
-        <img src="images/kinmen/IMG_2162.JPG" alt="Kinmen Astronomy Program" class="main-image">
+        <img src="images/kinmen/IMG_2162.JPG" alt="金門天文交流計畫活動紀錄｜Kinmen Astronomy Exchange Program" class="main-image">
 
 
         <div class="activity-content">
@@ -419,6 +424,11 @@
                     combining astronomy, technology, and ecology.</span>
             </p>
 
+            <p>
+                <span class="lang-zh">在前往帛琉之前，金門計畫成為重要的田野測試；我們從實際交流中調整做法，讓科學推廣更貼近在地需求。</span>
+                <span class="lang-en">Before bringing the project to Palau, Kinmen became an important field test. What we learned there helped us refine science outreach to better fit local needs.</span>
+            </p>
+
             <!-- Video Section -->
             <div class="video-container"
                 style="margin: 2rem 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -426,43 +436,6 @@
                     src="https://www.youtube.com/embed/v4mphYm0bo8" title="Kinmen Project Video" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
-            </div>
-
-            <!-- Team Section -->
-            <div class="section-block" style="margin-bottom: 2rem;">
-                <h2><span class="lang-zh">團隊成員</span><span class="lang-en">Team Members</span></h2>
-                <ul class="team-list" style="list-style: none; padding-left: 0;">
-                    <li><span class="lang-zh"><strong>謝承安</strong> 臺大物理系二年級 | 臺大天文社社長 | 星野發起人、金門計畫總召</span><span
-                            class="lang-en"><strong>Hsieh Cheng-An</strong> NTU Physics Year 2 | NTU Astronomy Club
-                            President | Hoshiko Founder, Kinmen Project Coordinator</span></li>
-                    <li><span class="lang-zh"><strong>涂宇軒</strong> 臺大物理系二年級 | 臺大天文社幹部 | 金門計畫總召</span><span
-                            class="lang-en"><strong>Tu Yu-Hsuan</strong> NTU Physics Year 2 | NTU Astronomy Club Cadre |
-                            Kinmen Project Vice Coordinator</span></li>
-                    <li><span class="lang-zh"><strong>許翌倫</strong> 清大物理系二年級 | 清大天文社幹部 | 技術組負責人</span><span
-                            class="lang-en"><strong>Hsu Yi-Lun</strong> NTHU Physics Year 2 | NTHU Astronomy Club Cadre
-                            | Technology Team Lead</span></li>
-                    <li><span class="lang-zh"><strong>蔡沂恩</strong> 清大工科系二年級 | 清大天文社幹部 | 教案負責人</span><span
-                            class="lang-en"><strong>Tsai Yi-En</strong> NTHU ESS Year 2 | NTHU Astronomy Club Cadre |
-                            Lesson Plan Lead</span></li>
-                    <li><span class="lang-zh"><strong>陳柏翰</strong> 臺大物理系二年級 | 臺大天文社幹部 | 教案總負責人</span><span
-                            class="lang-en"><strong>Chen Po-Han</strong> NTU Physics Year 2 | NTU Astronomy Club Cadre |
-                            Head of Lesson Planning</span></li>
-                    <li><span class="lang-zh"><strong>許孟凱</strong> 臺大生科系二年級 | 曾參與野一片夢之海(NGO) | 隊輔組負責人</span><span
-                            class="lang-en"><strong>Hsu Meng-Kai</strong> NTU Life Sci Year 2 | Former "Dream Ocean" NGO
-                            | Team Counselor Lead</span></li>
-                    <li><span class="lang-zh"><strong>陳子彬</strong> 臺大物理系二年級 | 臺大天文社幹部 | 教案負責人</span><span
-                            class="lang-en"><strong>Chen Tzu-Pin</strong> NTU Physics Year 2 | NTU Astronomy Club Cadre
-                            | Lesson Plan Lead</span></li>
-                    <li><span class="lang-zh"><strong>陳欣鈺</strong> 臺大大氣系二年級 | 臺大天文社副社長 | 教案負責人</span><span
-                            class="lang-en"><strong>Chen Hsin-Yu</strong> NTU Atmospheric Sci Year 2 | NTU Astronomy
-                            Club Vice President | Lesson Plan Lead</span></li>
-                    <li><span class="lang-zh"><strong>李曜成</strong> 臺大機械系二年級 | 臺大天文社幹部 | 教案負責人</span><span
-                            class="lang-en"><strong>Li Yao-Cheng</strong> NTU Mech Eng Year 2 | NTU Astronomy Club Cadre
-                            | Lesson Plan Lead</span></li>
-                    <li><span class="lang-zh"><strong>謝菀芸</strong> 政大法律系二年級 | 政大天文社社長 | 路邊天文負責人</span><span
-                            class="lang-en"><strong>Hsieh Wan-Yun</strong> NCCU Law Year 2 | NCCU Astronomy Club
-                            President | Sidewalk Astronomy Lead</span></li>
-                </ul>
             </div>
 
             <!-- Curriculum Section -->
@@ -596,19 +569,78 @@
 
         <h3><span class="lang-zh">活動花絮</span><span class="lang-en">Gallery</span></h3>
         <div class="gallery">
-            <img src="images/kinmen/IMG_2162.JPG" alt="Kinmen Activity Photo New" loading="lazy">
-            <img src="images/kinmen/DSC05667.jpg" alt="Kinmen Activity Photo 1" loading="lazy">
-            <img src="images/kinmen/DSC05845.jpg" alt="Kinmen Activity Photo 2" loading="lazy">
-            <img src="images/kinmen/DSC06031-2.jpg" alt="Kinmen Activity Photo 3" loading="lazy">
-            <img src="images/kinmen/IMG_0323.JPG" alt="Kinmen Activity Photo 4" loading="lazy">
-            <img src="images/kinmen/IMG_0422.JPG" alt="Kinmen Activity Photo 5" loading="lazy">
+            <img src="images/kinmen/IMG_2162.JPG" alt="金門天文交流計畫照片 1｜Kinmen Astronomy Exchange Program photo 1" loading="lazy">
+            <img src="images/kinmen/DSC05667.jpg" alt="金門天文交流計畫照片 2｜Kinmen Astronomy Exchange Program photo 2" loading="lazy">
+            <img src="images/kinmen/DSC05845.jpg" alt="金門天文交流計畫照片 3｜Kinmen Astronomy Exchange Program photo 3" loading="lazy">
+            <img src="images/kinmen/DSC06031-2.jpg" alt="金門天文交流計畫照片 4｜Kinmen Astronomy Exchange Program photo 4" loading="lazy">
+            <img src="images/kinmen/IMG_0323.JPG" alt="金門天文交流計畫照片 5｜Kinmen Astronomy Exchange Program photo 5" loading="lazy">
+            <img src="images/kinmen/IMG_0422.JPG" alt="金門天文交流計畫照片 6｜Kinmen Astronomy Exchange Program photo 6" loading="lazy">
+            <img src="images/kinmen/IMG_2047.jpg" alt="金門夜間交流合影 / Evening group at a Kinmen outreach event" loading="lazy">
         </div>
 
         <a href="index.html#projects" class="back-btn">
-            <span class="lang-zh">← 返回活動列表</span>
-            <span class="lang-en">← Back to Events</span>
+            <span class="lang-zh">← 返回活動紀錄</span>
+            <span class="lang-en">← Back to Our Journey</span>
         </a>
     </div>
+
+<section class="team" id="team">
+<div class="container">
+<div class="section-heading"><h2><span class="lang-zh">金門計畫成員</span><span class="lang-en">Kinmen project team</span></h2></div>
+<div class="team-grid">
+<article class="team-member">
+<h3><span class="lang-zh">謝承安</span><span class="lang-en">Hsieh Cheng-An</span></h3>
+<p class="team-role"><span class="lang-zh">星野發起人、金門計畫總召</span><span class="lang-en">Hoshiko Founder, Kinmen Project Coordinator</span></p>
+<p><span class="lang-zh">臺大物理系二年級</span><span class="lang-en">NTU Physics Year 2</span><br><span class="lang-zh">臺大天文社社長</span><span class="lang-en">NTU Astronomy Club President</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">涂宇軒</span><span class="lang-en">Tu Yu-Hsuan</span></h3>
+<p class="team-role"><span class="lang-zh">金門計畫總召</span><span class="lang-en">Kinmen Project Vice Coordinator</span></p>
+<p><span class="lang-zh">臺大物理系二年級</span><span class="lang-en">NTU Physics Year 2</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club Cadre</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">許翌倫</span><span class="lang-en">Hsu Yi-Lun</span></h3>
+<p class="team-role"><span class="lang-zh">技術組負責人</span><span class="lang-en">Technology Team Lead</span></p>
+<p><span class="lang-zh">清大物理系二年級</span><span class="lang-en">NTHU Physics Year 2</span><br><span class="lang-zh">清大天文社幹部</span><span class="lang-en">NTHU Astronomy Club Cadre</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">蔡沂恩</span><span class="lang-en">Tsai Yi-En</span></h3>
+<p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Lesson Plan Lead</span></p>
+<p><span class="lang-zh">清大工科系二年級</span><span class="lang-en">NTHU ESS Year 2</span><br><span class="lang-zh">清大天文社幹部</span><span class="lang-en">NTHU Astronomy Club Cadre</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">陳柏翰</span><span class="lang-en">Chen Po-Han</span></h3>
+<p class="team-role"><span class="lang-zh">教案總負責人</span><span class="lang-en">Head of Lesson Planning</span></p>
+<p><span class="lang-zh">臺大物理系二年級</span><span class="lang-en">NTU Physics Year 2</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club Cadre</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">許孟凱</span><span class="lang-en">Hsu Meng-Kai</span></h3>
+<p class="team-role"><span class="lang-zh">隊輔組負責人</span><span class="lang-en">Team Counselor Lead</span></p>
+<p><span class="lang-zh">臺大生科系二年級</span><span class="lang-en">NTU Life Sci Year 2</span><br><span class="lang-zh">曾參與野一片夢之海(NGO)</span><span class="lang-en">Former &quot;Dream Ocean&quot; NGO</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">陳子彬</span><span class="lang-en">Chen Tzu-Pin</span></h3>
+<p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Lesson Plan Lead</span></p>
+<p><span class="lang-zh">臺大物理系二年級</span><span class="lang-en">NTU Physics Year 2</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club Cadre</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">陳欣鈺</span><span class="lang-en">Chen Hsin-Yu</span></h3>
+<p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Lesson Plan Lead</span></p>
+<p><span class="lang-zh">臺大大氣系二年級</span><span class="lang-en">NTU Atmospheric Sci Year 2</span><br><span class="lang-zh">臺大天文社副社長</span><span class="lang-en">NTU Astronomy Club Vice President</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">李曜成</span><span class="lang-en">Li Yao-Cheng</span></h3>
+<p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Lesson Plan Lead</span></p>
+<p><span class="lang-zh">臺大機械系二年級</span><span class="lang-en">NTU Mech Eng Year 2</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club Cadre</span></p>
+</article>
+<article class="team-member">
+<h3><span class="lang-zh">謝菀芸</span><span class="lang-en">Hsieh Wan-Yun</span></h3>
+<p class="team-role"><span class="lang-zh">路邊天文負責人</span><span class="lang-en">Sidewalk Astronomy Lead</span></p>
+<p><span class="lang-zh">政大法律系二年級</span><span class="lang-en">NCCU Law Year 2</span><br><span class="lang-zh">政大天文社社長</span><span class="lang-en">NCCU Astronomy Club President</span></p>
+</article>
+</div>
+</div>
+</section>
 
     <!-- 頁尾區域 -->
     <footer id="contact">
@@ -632,19 +664,14 @@
             <div class="footer-column">
                 <h3><span class="lang-zh">快速連結</span><span class="lang-en">Quick Links</span></h3>
                 <ul>
-                    <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
-                                Us</span></a></li>
-                    <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
-                                class="lang-en">Projects</span></a></li>
-                    <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
-                                class="lang-en">Events</span></a></li>
-                    <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span
-                                class="lang-en">Impact</span></a></li>
+                    <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About</span></a></li>
+                    <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Our Journey</span></a></li>
+
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 <span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span> <span
+            <p>&copy; 2026 <span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span> <span
                     class="lang-zh">版權所有</span><span class="lang-en">All Rights Reserved</span></p>
         </div>
     </footer>
@@ -675,9 +702,11 @@
         const body = document.body;
 
         menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.classList.toggle('active', !expanded);
+            navLinks.classList.toggle('active', !expanded);
+            menuToggle.setAttribute('aria-expanded', String(!expanded));
+            document.body.classList.toggle('menu-open', !expanded);
         });
 
         // 確保點擊導航鏈接後關閉菜單
@@ -686,6 +715,7 @@
                 if (window.innerWidth <= 768) {
                     menuToggle.classList.remove('active');
                     navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
                     document.body.classList.remove('menu-open');
                 }
             });

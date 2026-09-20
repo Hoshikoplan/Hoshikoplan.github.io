@@ -1,548 +1,380 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>帛琉星空交流計畫 | 星野的孩子</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>星野的孩子 × 帛琉｜Hoshiko × Palau</title>
+    <meta name="description" content="2026 年 2 月，星野的孩子與 Palau High School 及科羅州社區進行天文、基礎科學、環境教育與文化交流。">
+    <meta name="theme-color" content="#28573d">
     <link rel="icon" href="images/hoshiko.ico">
     <style>
-        /* 基本樣式設置 */
         :root {
-            --primary-color: #3f8914b9;
-            --secondary-color: #a2d148;
-            --accent-color: #235789;
-            --text-color: #333;
-            --light-bg: #f5f5f5;
+            --green: #28573d;
+            --green-deep: #193f2c;
+            --green-soft: #e9efe9;
+            --cream: #f7f7f2;
+            --ink: #1d2b22;
+            --muted: #59675e;
+            --line: #d9e1da;
+            --lime: #c6dd98;
+            --white: #fff;
+            --content: 1080px;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "微軟正黑體", "Noto Sans TC", sans-serif;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            color: var(--text-color);
-            line-height: 1.6;
+            margin: 0;
+            color: var(--ink);
+            background: var(--white);
+            font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+            line-height: 1.7;
         }
-
-        a {
-            text-decoration: none;
-            color: var(--accent-color);
-        }
-
-        /* 頁首樣式 */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(var(--content), calc(100% - 3rem)); margin-inline: auto; }
+        .lang-en { display: none; }
+        body.english-mode .lang-zh { display: none; }
+        body.english-mode .lang-en { display: inline; }
+        .site-header { position: sticky; top: 0; z-index: 10; color: var(--white); background: var(--green); }
+        .site-nav {
+            min-height: 70px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            justify-content: space-between;
+            gap: 1.5rem;
+            position: relative;
         }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
+        .brand { font-size: 1.2rem; font-weight: 750; letter-spacing: .04em; white-space: nowrap; }
         .nav-links {
             display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-
-        .nav-links a {
-            color: white;
-            font-weight: 500;
-            padding: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-        }
-
-        /* 頁尾樣式 */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            margin-bottom: 1rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--secondary-color);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column a {
-            color: #ccc;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
+            gap: clamp(.65rem, 1.6vw, 1.3rem);
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
-
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Language Toggle utilities */
-        .lang-en {
-            display: none;
-        }
-
-        body.english-mode .lang-zh {
-            display: none;
-        }
-
-        body.english-mode .lang-en {
-            display: inline-block;
-        }
-
-        /* Toggle Button Style */
+        .nav-links a { color: var(--white); font-size: .94rem; padding: .45rem .1rem; border-bottom: 1px solid transparent; }
+        .nav-links a:hover, .nav-links a:focus-visible { border-color: var(--lime); }
         .lang-toggle {
+            color: var(--white);
             background: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.65);
+            border-radius: 999px;
+            padding: .35rem .8rem;
             cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            margin-left: 1rem;
-            font-family: inherit;
         }
-
-        .lang-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Activity Detail Page Styles */
-        .activity-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .activity-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .activity-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-            margin-top: -2rem;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .activity-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--light-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-        }
-
-        .main-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        .activity-content {
-            line-height: 1.8;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
-
-        .activity-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .activity-content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5em;
-        }
-
-        .activity-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-top: 2rem;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .back-btn:hover {
-            text-decoration: underline;
-        }
-
-        /* 漢堡選單按鈕 */
+        .lang-toggle:hover, .lang-toggle:focus-visible { color: var(--green-deep); background: var(--lime); }
         .menu-toggle {
             display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 20px;
+            color: var(--white);
+            background: transparent;
+            border: 1px solid rgba(255,255,255,.55);
+            border-radius: 5px;
+            padding: .45rem .65rem;
             cursor: pointer;
         }
+        .menu-toggle span { display: block; width: 22px; height: 2px; margin: 4px 0; background: currentColor; }
 
-        .menu-toggle span {
-            height: 3px;
-            width: 100%;
-            background-color: white;
-            border-radius: 3px;
-            transition: all 0.3s ease;
+        .activity-heading { padding: clamp(3rem, 7vw, 5rem) 0 3.4rem; color: var(--white); background: var(--green); }
+        .eyebrow {
+            margin: 0 0 .7rem;
+            color: #d9e8c2;
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: .15em;
+            text-transform: uppercase;
         }
+        .activity-heading h1 {
+            max-width: 850px;
+            margin: 0;
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            line-height: 1.16;
+            letter-spacing: -.03em;
+        }
+        .subtitle { margin: .8rem 0 1.5rem; color: #eef3e9; font-size: clamp(1.08rem, 2vw, 1.35rem); }
+        .activity-info { display: flex; flex-wrap: wrap; gap: .65rem; }
+        .info-item {
+            padding: .42rem .78rem;
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 4px;
+            color: var(--white);
+            font-size: .94rem;
+        }
+        section { padding: clamp(3.2rem, 6vw, 5rem) 0; }
+        .section-heading { margin-bottom: 1.7rem; }
+        .section-heading .eyebrow { color: #647c5c; }
+        .section-heading h2 { margin: 0; color: var(--green-deep); font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.25; }
+        .section-heading p { max-width: 740px; margin: .7rem 0 0; color: var(--muted); }
+        .overview-copy-container { max-width: 800px; }
+        .overview-copy p { margin: 0 0 .9rem; }
+        .figure-caption { margin: .5rem 0 0; color: #cbd9cc; font-size: .88rem; }
+        .activities { background: var(--cream); }
+        .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+        .activity-card {
+            padding: 1.3rem;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--white);
+        }
+        .activity-card h3 { margin: 0 0 .45rem; color: var(--green); font-size: 1.18rem; }
+        .activity-card p { margin: 0; color: var(--muted); }
+        .story-house { color: var(--white); background: var(--green-deep); }
+        .story-house-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(300px, .95fr);
+            align-items: center;
+            gap: clamp(1.5rem, 4vw, 3.5rem);
+        }
+        .story-house .eyebrow { color: var(--lime); }
+        .story-house h2 { margin: 0; color: var(--white); font-size: clamp(1.7rem, 3vw, 2.5rem); }
+        .story-house .quote { margin: .85rem 0; color: var(--lime); font-size: clamp(1.25rem, 2.2vw, 1.7rem); font-weight: 750; }
+        .story-house p { color: #e3ebe3; }
+        .story-house .number { display: inline-block; margin-right: .45rem; color: var(--lime); font-size: 2.3rem; font-weight: 800; line-height: 1.1; }
+        .story-house figure { margin: 0; }
+        .story-house img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 7px; }
+        .gallery-placeholder {
+            display: grid;
+            min-height: 170px;
+            place-items: center;
+            padding: 1.5rem;
+            border: 1px dashed #9aae9b;
+            border-radius: 6px;
+            color: var(--muted);
+            background: var(--cream);
+            text-align: center;
+        }
+        .gallery-placeholder p { margin: .15rem; }
+        .reflection { background: var(--green-soft); }
+        .reflection p { max-width: 850px; margin: 0; font-size: 1.08rem; }
+        .back-link {
+            display: inline-flex;
+            margin-top: 1.8rem;
+            color: var(--green);
+            font-weight: 750;
+        }
+        .back-link:hover { text-decoration: underline; text-underline-offset: .2em; }
 
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
+        .site-footer { padding: 2.7rem 0 1.2rem; color: #e8eee7; background: var(--green-deep); }
+        .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; }
+        .site-footer h2 { margin: 0 0 .5rem; color: var(--white); font-size: 1.25rem; }
+        .site-footer p { margin: .35rem 0; color: #d0dbd1; }
+        .site-footer a { color: inherit; }
+        .site-footer a:hover { color: var(--lime); text-decoration: underline; text-underline-offset: .2em; }
+        .footer-links { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; margin: .8rem 0 0; padding: 0; list-style: none; }
+        .social-links { display: flex; gap: .7rem; margin-top: 1rem; }
+        .social-links a {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255,255,255,.4);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: .78rem;
+            font-weight: 800;
+        }
+        .social-links a:hover { color: var(--green-deep); background: var(--lime); }
+        .copyright { margin-top: 1.8rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.2); color: #c9d5cb; font-size: .88rem; }
 
+        @media (max-width: 920px) {
+            .menu-toggle { display: block; }
+            .site-nav { min-height: 66px; }
             .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                background-color: var(--primary-color);
-                align-items: center;
-                height: 0;
-                overflow: hidden;
-                transition: height 0.3s ease;
-                z-index: 999;
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                right: auto;
+                width: 100vw;
+                transform: translateX(-50%);
+                align-items: stretch;
+                padding: .7rem 1.5rem 1rem;
+                background: var(--green-deep);
             }
-
-            .nav-links.active {
-                height: 300px;
-                padding: 1rem 0;
-            }
-
-            .nav-links li {
-                margin: 1rem 0;
-            }
-
-            body.menu-open {
-                overflow: hidden;
-            }
-
-            .menu-toggle.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
+            .nav-links.active { display: flex; flex-direction: column; gap: .1rem; }
+            .nav-links a { display: block; padding: .55rem 0; }
+            .lang-toggle { margin-top: .45rem; }
+        }
+        @media (max-width: 680px) {
+            .container { width: min(var(--content), calc(100% - 2rem)); }
+            .nav-links { padding-inline: 1rem; }
+            .story-house-grid { grid-template-columns: 1fr; }
+            .activity-grid { grid-template-columns: 1fr; }
+            section { padding: 3.25rem 0; }
+            .activity-heading { padding: 3rem 0; }
+            .footer-grid { grid-template-columns: 1fr; gap: 1.3rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
         }
     </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260920-4">
 </head>
-
 <body>
-    <!-- 頁首區域 -->
-    <header>
-        <nav>
-            <div class="logo"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html#"><span class="lang-zh">首頁</span><span class="lang-en">Home</span></a></li>
-                <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
-                            Us</span></a></li>
-                <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
-                            class="lang-en">Projects</span></a></li>
-                <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
-                            class="lang-en">Events</span></a></li>
-                <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a>
-                </li>
-                <li><a href="index.html#contact"><span class="lang-zh">聯絡我們</span><span
-                            class="lang-en">Contact</span></a></li>
-                <li><button class="lang-toggle" id="langToggle">EN / 中</button></li>
+    <header class="site-header">
+        <nav class="site-nav container" aria-label="Main navigation">
+            <a class="brand" href="index.html"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></a>
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="site-menu">
+                <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About</span></a></li>
+                <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Our Journey</span></a></li>
+
+
+                <li><a href="index.html#news"><span class="lang-zh">最新消息</span><span class="lang-en">News</span></a></li>
+                <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a></li>
+                <li><a href="index.html#contact"><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact</span></a></li>
+                <li><button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN / 中</button></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 活動詳情內容 -->
-    <section class="activity-header">
-        <h1>
-            <span class="lang-zh">帛琉星空交流計畫（籌劃中）</span>
-            <span class="lang-en">Palau Starry Sky Exchange Program (Planning)</span>
-        </h1>
-    </section>
-
-    <div class="activity-container">
-        <div class="activity-info">
-            <div class="info-item">
-                <span>📅</span>
-                <span class="lang-zh">預計2026年2月</span>
-                <span class="lang-en">Expected February 2026</span>
-            </div>
-            <div class="info-item">
-                <span>📍</span>
-                <span class="lang-zh">帛琉共和國</span>
-                <span class="lang-en">Republic of Palau</span>
-            </div>
-            <div class="info-item">
-                <span>👥</span>
-                <span class="lang-zh">預計30名學生</span>
-                <span class="lang-en">Expected 30 Students</span>
-            </div>
-        </div>
-
-        <img src="images/Milk.jpeg" alt="Palau Starry Sky" class="main-image">
-
-        <div class="activity-content">
-            <p>
-                <span class="lang-zh">「帛琉星空交流計畫」是我們規劃中的國際教育合作項目，預計在2026年2月進行。這是「星野的孩子」首次嘗試的跨國教育交流活動。</span>
-                <span class="lang-en">The "Palau Starry Sky Exchange Program" is an international education cooperation
-                    project we are planning, expected to take place in February 2026. This is the first transnational
-                    educational exchange activity attempted by "Hoshiko".</span>
-            </p>
-            <p>
-                <span class="lang-zh">帛琉擁有極低的光害和絕佳的天文觀測條件，是南半球觀星的理想地點。同時，帛琉的自然保育意識和文化特色，也為我們的天文與STEM領域教育提供了絕佳的地點。</span>
-                <span class="lang-en">Palau has extremely low light pollution and excellent astronomical observation
-                    conditions, making it an ideal place for stargazing in the Southern Hemisphere. At the same time,
-                    Palau's awareness of nature conservation and cultural characteristics also provides an excellent
-                    location for our astronomy and STEM education.</span>
-            </p>
-            <p>
-                <span class="lang-zh">此計畫的主要目標是：</span>
-                <span class="lang-en">The main goals of this project are:</span>
-            </p>
-            <ul>
-                <li><span class="lang-zh">透過天文建立台灣與帛琉學生間的交流平台</span><span class="lang-en">Establish an exchange platform
-                        between Taiwan and Palau students through astronomy</span></li>
-                <li><span class="lang-zh">結合天文觀測與自然生態教育，發展跨領域學習模式</span><span class="lang-en">Combine astronomical
-                        observation with natural ecology education to develop interdisciplinary learning models</span>
-                </li>
-                <li><span class="lang-zh">記錄並比較不同地理位置的星空特色</span><span class="lang-en">Record and compare starry sky
-                        characteristics in different geographical locations</span></li>
-                <li><span class="lang-zh">STEM 跨領域教學</span><span class="lang-en">STEM Interdisciplinary Teaching</span>
-                </li>
-            </ul>
-            <p>
-                <span class="lang-zh">我們計畫與當地學校合作，共同開發適合帛琉環境的自然科學教育課程。</span>
-                <span class="lang-en">We plan to cooperate with local schools to jointly develop natural science
-                    education curricula suitable for the Palau environment.</span>
-            </p>
-            <p>
-                <span class="lang-zh">目前正在申請相關的國際合作計畫和尋找贊助單位。如果您對這個計畫有興趣或能提供協助，歡迎與我們聯繫！</span>
-                <span class="lang-en">We are currently applying for related international cooperation projects and
-                    looking for sponsors. If you are interested in this project or can provide assistance, please feel
-                    free to contact us!</span>
-            </p>
-        </div>
-
-        <h3><span class="lang-zh">活動花絮</span><span class="lang-en">Gallery</span></h3>
-        <div class="gallery">
-            <img src="images/Milk.jpeg" alt="Palau Starry Sky" loading="lazy">
-        </div>
-
-        <a href="index.html#projects" class="back-btn">
-            <span class="lang-zh">← 返回活動列表</span>
-            <span class="lang-en">← Back to Events</span>
-        </a>
-    </div>
-
-    <!-- 頁尾區域 -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></h3>
-                <p><span class="lang-zh">用教育連結城鄉，用自然啟發生命。</span><span class="lang-en">Connecting urban and rural areas
-                        through education, inspiring life through nature.</span></p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61575271155514"><span>FB</span></a>
-                    <a href="https://www.instagram.com/hoshiko_plan/"><span>IG</span></a>
-                    <a href="https://www.youtube.com/@Didymos65803"><span>YT</span></a>
+    <main>
+        <section class="activity-heading">
+            <div class="container">
+                <p class="eyebrow"><span class="lang-zh">2026 / 帛琉</span><span class="lang-en">2026 / Palau</span></p>
+                <h1><span class="lang-zh">星野的孩子 × 帛琉</span><span class="lang-en">Hoshiko × Palau</span></h1>
+                <p class="subtitle"><span class="lang-zh">基礎科學、天文與環境教育交流</span><span class="lang-en">An exchange in foundational science, astronomy and environmental education</span></p>
+                <div class="activity-info">
+                    <span class="info-item">📅 <time datetime="2026-02-05">2026.02.05</time>–<time datetime="2026-02-12">02.12</time></span>
+                    <span class="info-item"><span class="lang-zh">📍 Palau High School・帛琉科羅州 Koror 地區</span><span class="lang-en">📍 Palau High School &amp; Koror, Palau</span></span>
                 </div>
             </div>
-            <div class="footer-column">
-                <h3><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact Us</span></h3>
-                <p><span class="lang-zh">電子郵件：</span><span class="lang-en">Email: </span>hoshikoplan@gmail.com</p>
-                <p><span class="lang-zh">地址：台北市大安區羅斯福路四段一號</span><span class="lang-en">Address: No. 1, Sec. 4, Roosevelt
-                        Rd., Da'an Dist., Taipei City</span></p>
+        </section>
+
+        <section>
+            <div class="container overview-copy-container">
+                <div class="section-heading">
+                    <h2><span class="lang-zh">從金門走向帛琉</span><span class="lang-en">From Kinmen to Palau</span></h2>
+                </div>
+                <div class="overview-copy">
+                    <p><span class="lang-zh">帛琉計畫歷經一年多準備，承接金門交流的實地經驗，並與 Palau High School 及科羅州社區共同完成。活動把天文、基礎科學和環境教育帶進校園與社區，也讓團隊從不同的地方學習。</span><span class="lang-en">Prepared over more than a year and shaped by the team’s field experience in Kinmen, the Palau project was carried out with Palau High School and communities in Koror. Activities brought astronomy, foundational science and environmental learning into schools and community spaces, while giving the team a chance to learn from a new place.</span></p>
+                </div>
             </div>
-            <div class="footer-column">
-                <h3><span class="lang-zh">快速連結</span><span class="lang-en">Quick Links</span></h3>
-                <ul>
-                    <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
-                                Us</span></a></li>
-                    <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
-                                class="lang-en">Projects</span></a></li>
-                    <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
-                                class="lang-en">Events</span></a></li>
-                    <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span
-                                class="lang-en">Impact</span></a></li>
-                </ul>
+        </section>
+
+        <section class="activities">
+            <div class="container">
+                <div class="section-heading">
+                    <h2><span class="lang-zh">一起觀察，也一起動手</span><span class="lang-en">Observing and making things together</span></h2>
+                </div>
+                <div class="activity-grid">
+                    <article class="activity-card">
+                        <h3><span class="lang-zh">天文</span><span class="lang-en">Astronomy</span></h3>
+                        <p><span class="lang-zh">透過星空導覽與望遠鏡活動認識夜空。帛琉位於低緯度，能接觸到臺灣較難觀測的部分南方天體。</span><span class="lang-en">Sky tours and telescope activities opened up the night sky. Palau’s low latitude also gave the team access to some southern celestial objects that are harder to observe from Taiwan.</span></p>
+                    </article>
+                    <article class="activity-card">
+                        <h3><span class="lang-zh">大氣與 Arduino</span><span class="lang-en">Atmosphere &amp; Arduino</span></h3>
+                        <p><span class="lang-zh">以大氣科學概念搭配 Arduino 感測器實作，練習用工具觀察周遭環境。</span><span class="lang-en">Atmospheric science concepts met hands-on Arduino sensor activities, using simple tools to investigate the surrounding environment.</span></p>
+                    </article>
+                    <article class="activity-card">
+                        <h3><span class="lang-zh">生態觀察</span><span class="lang-en">Ecology</span></h3>
+                        <p><span class="lang-zh">從在地環境出發觀察生態，連結科學探索與日常生活中的自然。</span><span class="lang-en">Ecology activities began with the local environment, connecting scientific exploration with the nature of everyday life.</span></p>
+                    </article>
+                    <article class="activity-card">
+                        <h3><span class="lang-zh">文化交流</span><span class="lang-en">Cultural exchange</span></h3>
+                        <p><span class="lang-zh">透過彼此分享生活經驗與地方故事，讓臺灣與帛琉的學生在交流中認識彼此。</span><span class="lang-en">Students from Taiwan and Palau shared everyday experiences and local stories, learning about one another through conversation.</span></p>
+                    </article>
+                </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 <span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span> <span
-                    class="lang-zh">版權所有</span><span class="lang-en">All Rights Reserved</span></p>
+        </section>
+
+        <section class="story-house">
+            <div class="story-house-grid container">
+                <div>
+                    <h2><span class="lang-zh">星空故事館</span><span class="lang-en">Starry Story House</span></h2>
+                    <p class="quote"><span class="lang-zh">「留下一個故事，帶走一片星空。」</span><span class="lang-en">“Leave a story, take home a sky full of stars.”</span></p>
+                    <p><span class="number">150+</span><span class="lang-zh">位當地居民、學生與國際訪客參與帛琉社區的星空故事館活動。</span><span class="lang-en">local residents, students and international visitors joined the community Starry Story House activities in Palau.</span></p>
+                </div>
+                <figure>
+                    <img src="images/palau/community-stories.jpg" alt="帛琉夜市的星空故事館 / Starry Story House at a Palau night market">
+                    <figcaption class="figure-caption"><span class="lang-zh">夜市裡，從一張星圖聊起。</span><span class="lang-en">Sharing stories over a star chart at the night market.</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <h2><span class="lang-zh">活動照片</span><span class="lang-en">Project gallery</span></h2>
+                </div>
+                <div class="palau-gallery"><figure><img src="images/palau/circuits.jpg" alt="電路實作 / Hands-on circuits" loading="lazy"><figcaption><span class="lang-zh">電路實作</span><span class="lang-en">Hands-on circuits</span></figcaption></figure><figure><img src="images/palau/ecology.jpg" alt="生態觀察 / Ecology in the field" loading="lazy"><figcaption><span class="lang-zh">生態觀察</span><span class="lang-en">Ecology in the field</span></figcaption></figure><figure><img src="images/palau/sky-tour.jpg" alt="一起觀星 / Stargazing together" loading="lazy"><figcaption><span class="lang-zh">一起觀星</span><span class="lang-en">Stargazing together</span></figcaption></figure><figure><img src="images/palau/culture.jpg" alt="紙傘與文化交流 / Art and cultural exchange" loading="lazy"><figcaption><span class="lang-zh">紙傘與文化交流</span><span class="lang-en">Art and cultural exchange</span></figcaption></figure></div>
+            </div>
+        </section>
+
+        <section class="reflection">
+            <div class="container">
+                <div class="section-heading">
+                    <h2><span class="lang-zh">在一起動手的時候相遇</span><span class="lang-en">A shared language in hands-on learning</span></h2>
+                </div>
+                <p><span class="lang-zh">不同的教育與文化背景，沒有阻止大家一起提問和嘗試。當我們共同觀察、動手實作，科學便成為彼此交流的起點。</span><span class="lang-en">Different educational and cultural backgrounds did not keep people from asking questions and trying things together. Through shared observation and hands-on learning, science became a starting point for conversation.</span></p>
+                <p><a class="text-link" href="#team"><span class="lang-zh">認識團隊成員 →</span><span class="lang-en">Meet the team →</span></a></p>
+                <a class="back-link" href="index.html#projects"><span class="lang-zh">← 回到活動紀錄</span><span class="lang-en">← Back to Our Journey</span></a>
+            </div>
+        </section>
+<section class="team" id="team"><div class="container"><div class="section-heading"><h2><span class="lang-zh">團隊成員</span><span class="lang-en">Our team</span></h2></div><div class="team-grid"><article class="team-member"><h3>陳柏翰</h3><p class="team-role"><span class="lang-zh">帛琉計畫總召</span><span class="lang-en">Palau project lead</span></p><p><span class="lang-zh">臺大物理系三年級</span><span class="lang-en">NTU Physics · Year 3</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club officer</span></p></article><article class="team-member"><h3>涂宇軒</h3><p class="team-role"><span class="lang-zh">帛琉計畫總召</span><span class="lang-en">Palau project lead</span></p><p><span class="lang-zh">臺大物理系三年級</span><span class="lang-en">NTU Physics · Year 3</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club officer</span></p></article><article class="team-member"><h3>謝承安</h3><p class="team-role"><span class="lang-zh">星野發起人、星空故事館負責人</span><span class="lang-en">Hoshiko founder · Starry Story House lead</span></p><p><span class="lang-zh">臺大物理系三年級</span><span class="lang-en">NTU Physics · Year 3</span><br><span class="lang-zh">臺大天文社社長</span><span class="lang-en">NTU Astronomy Club president</span></p></article><article class="team-member"><h3>許翌倫</h3><p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Curriculum lead</span></p><p><span class="lang-zh">清大物理系三年級</span><span class="lang-en">NTHU Physics · Year 3</span><br><span class="lang-zh">清大天文社幹部</span><span class="lang-en">NTHU Astronomy Club officer</span></p></article><article class="team-member"><h3>蔡沂恩</h3><p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Curriculum lead</span></p><p><span class="lang-zh">清大工科系三年級</span><span class="lang-en">NTHU Engineering and System Science · Year 3</span><br><span class="lang-zh">清大天文社幹部</span><span class="lang-en">NTHU Astronomy Club officer</span></p></article><article class="team-member"><h3>許孟凱</h3><p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Curriculum lead</span></p><p><span class="lang-zh">臺大生科系三年級</span><span class="lang-en">NTU Life Science · Year 3</span><br><span class="lang-zh">曾參與野一片夢之海（NGO）</span><span class="lang-en">Previously participated in 野一片夢之海 (NGO)</span></p></article><article class="team-member"><h3>陳子彬</h3><p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Curriculum lead</span></p><p><span class="lang-zh">臺大物理系三年級</span><span class="lang-en">NTU Physics · Year 3</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club officer</span></p></article><article class="team-member"><h3>陳欣鈺</h3><p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Curriculum lead</span></p><p><span class="lang-zh">臺大大氣系三年級</span><span class="lang-en">NTU Atmospheric Sciences · Year 3</span><br><span class="lang-zh">臺大天文社副社長</span><span class="lang-en">NTU Astronomy Club vice president</span></p></article><article class="team-member"><h3>李曜成</h3><p class="team-role"><span class="lang-zh">教案負責人</span><span class="lang-en">Curriculum lead</span></p><p><span class="lang-zh">臺大機械系三年級</span><span class="lang-en">NTU Mechanical Engineering · Year 3</span><br><span class="lang-zh">臺大天文社幹部</span><span class="lang-en">NTU Astronomy Club officer</span></p></article></div><article class="team-advisor"><h3>林法勤</h3><p><span class="lang-zh">臺大森林系副教授 · 帶隊老師</span><span class="lang-en">Associate Professor, NTU School of Forestry and Resource Conservation · Faculty advisor</span></p></article></div></section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></h2>
+                    <p><span class="lang-zh">用星空與自然，和不同地方的人一起學習。</span><span class="lang-en">Learning together through the night sky and the natural world.</span></p>
+                    <div class="social-links" aria-label="Social media">
+                        <a href="https://www.facebook.com/profile.php?id=61575271155514" aria-label="Facebook">FB</a>
+                        <a href="https://www.instagram.com/hoshiko_plan/" aria-label="Instagram">IG</a>
+                        <a href="https://www.youtube.com/@Didymos65803" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+                <div>
+                    <h2><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact</span></h2>
+                    <p><a href="mailto:hoshikoplan@gmail.com">hoshikoplan@gmail.com</a></p>
+                    <p><span class="lang-zh">臺北市大安區羅斯福路四段一號</span><span class="lang-en">No. 1, Sec. 4, Roosevelt Rd., Da’an District, Taipei City</span></p>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About</span></a></li>
+                        <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Our Journey</span></a></li>
+                        <li><a href="activity-palau.html"><span class="lang-zh">帛琉計畫</span><span class="lang-en">Palau Project</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 <span class="lang-zh">星野的孩子版權所有</span><span class="lang-en">Hoshiko. All rights reserved.</span></div>
         </div>
     </footer>
 
     <script>
-        // Language Toggle Logic
-        const langToggleBtn = document.getElementById('langToggle');
+        const languageButton = document.getElementById('langToggle');
+        const menuButton = document.querySelector('.menu-toggle');
+        const navigation = document.getElementById('site-menu');
 
-        // Check local storage and initialize
-        const savedLang = localStorage.getItem('language');
-        if (savedLang === 'en') {
-            document.body.classList.add('english-mode');
+        function setLanguage(language) {
+            const english = language === 'en';
+            document.body.classList.toggle('english-mode', english);
+            document.documentElement.lang = english ? 'en' : 'zh-Hant-TW';
+            localStorage.setItem('language', language);
         }
 
-        langToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('english-mode');
-
-            if (document.body.classList.contains('english-mode')) {
-                localStorage.setItem('language', 'en');
-            } else {
-                localStorage.setItem('language', 'zh');
-            }
+        setLanguage(localStorage.getItem('language') === 'en' ? 'en' : 'zh');
+        languageButton.addEventListener('click', () => {
+            setLanguage(document.body.classList.contains('english-mode') ? 'zh' : 'en');
         });
-
-        // 漢堡選單控制
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const body = document.body;
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', String(!expanded));
+            menuButton.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+            navigation.classList.toggle('active', !expanded);
         });
-
-        // 確保點擊導航鏈接後關閉菜單
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        navigation.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    menuToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                }
+                navigation.classList.remove('active');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Open navigation');
             });
         });
     </script>
 </body>
-
 </html>
